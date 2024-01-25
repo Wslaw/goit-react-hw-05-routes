@@ -1,4 +1,4 @@
-import styles from './posts-search-page.module.css';
+// import styles from './posts-search-page.module.css';
 
 const PostsSearchPage = () => {
   return (

@@ -1,6 +1,6 @@
 import Posts from 'components/Posts/Posts';
 
-import styles from './home-page.module.css';
+// import styles from './home-page.module.css';
 
 const HomePage = () => {
   return (
