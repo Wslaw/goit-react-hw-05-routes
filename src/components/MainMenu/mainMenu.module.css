@@ -1,0 +1,18 @@
+.menu{
+list-style: none;
+display: flex;
+justify-content: center;
+}
+
+.link{
+text-decoration: none;
+padding: 10px 15px;
+color: #000;
+font-size: 18px;
+font-weight: bold;
+}
+
+.link:global(.active){
+    color: rgb(112, 59, 218);
+    text-decoration: underline;
+}
