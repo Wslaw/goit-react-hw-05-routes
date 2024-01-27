@@ -14,9 +14,9 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/posts-search" element={<PostsSearchPage />} />
+        <Route path="/posts/:id" element={<SinglePostPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="*" element={<NotFoundPage />} />
-        <Route path="/posts/:id" element={<SinglePostPage />} />
       </Routes>
     </div>
   );
