@@ -1,32 +1,35 @@
 import styles from './single-post.module.css';
 import { getPostsById } from 'api/posts';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const SinglePost = () => {
-//   const params = useParams();
-    //   console.log(params);
-    const [post, setPost] = useState();
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const { id } = useParams();
+  //   const params = useParams();
+  //   console.log(params);
+  const [post, setPost] = useState();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const fetchPost = async () => {
-            try {
-                setLoading(true);
-                const { data } = await getPostsById(id);
-                setPost(data);
-            } catch (error) {
-                setError(error.message)
-            }
-            finally {
-                setLoading(false);
-            }
-        }
+  const { id } = useParams();
+  const navigate = useNavigate();
 
-        fetchPost();
-    }, [id]);
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        setLoading(true);
+        const { data } = await getPostsById(id);
+        setPost(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPost();
+  }, [id]);
+
+  const goBack = () => navigate(-1);
 
   return (
     <div>
@@ -34,6 +37,7 @@ const SinglePost = () => {
       <p>Post body</p> */}
       {loading && <p>...Loading</p>}
       {error && <p>Error: {error}</p>}
+      <button onClick={goBack} type="button">Go Back</button>
       {post && (
         <>
           <h2 className={styles.title}>{post.title}</h2>
