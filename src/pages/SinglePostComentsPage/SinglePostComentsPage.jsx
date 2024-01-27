@@ -25,7 +25,7 @@ const SinglePostComentsPage = () => {
     };
 
     fetchComents();
-  }, []);
+  }, [id]);
 
   const elements = coments.map(({ id, name, body }) => (
       <li key={id}>
