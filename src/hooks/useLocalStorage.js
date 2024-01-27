@@ -18,7 +18,7 @@ const useLocalStorage = (key, defaultValue) => {
         if (!firstRender.current) {
             localStorage.setItem(key, JSON.stringify(state));
         }
-    }, [state]);
+    }, [state, key]);
 
     useEffect(() => {
         firstRender.current = false;

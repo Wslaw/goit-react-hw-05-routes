@@ -30,3 +30,7 @@ export const searchPosts = (q, _page = 1) => {
         }
     })
 }
+
+export const getComentsByPostId = id => {
+  return instance.get(`/${id}/comments`);
+}
