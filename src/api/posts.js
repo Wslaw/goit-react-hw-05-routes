@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_KEY = 'a5e80a241b45048d42e42bcf67dfe2f1';
+// const API_KEY = 'a5e80a241b45048d42e42bcf67dfe2f1';
 
 const instance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com/posts',
