@@ -18,8 +18,8 @@ const useForm = (initialState, onSubmit) => {
     };
 
     const reset = useCallback(() => {
-        setState({ ...initialState });
-    }, []);
+      setState({ ...initialState });
+    }, [initialState]);
 
     return {state, setState, handleChange, handleSubmit, reset}
 }
